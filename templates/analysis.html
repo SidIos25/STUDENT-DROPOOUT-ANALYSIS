@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Welcome to Department Of Education,Gujarat</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis, as you like</title>
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="{{ url_for('static', filename='img/GUJARAT_MAP.jpg') }}"
+    />
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="{{ url_for('static', filename='img/analysis.svg') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      hr {
+        height: 8px;
+        background: linear-gradient(
+          to right,
+          rgb(30, 27, 22),
+          rgb(237, 22, 22),
+          rgb(66, 73, 218),
+          rgb(233, 187, 4),
+          rgb(237, 22, 22),
+          rgb(66, 73, 218),
+          rgb(233, 187, 4),
+          rgb(237, 22, 22),
+          rgb(66, 73, 218),
+        );
+        border-radius: 20px;
+        border: 3px solid black;
+        width: 100%;
+        margin-left: auto;
+      }
+    </style>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      nav {
+        height: 110px;
+        background: #0b6298;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0rem calc((100vw - 1300px) / 2);
+      }
+
+      .logo {
+        color:#e6e3db ;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-style: normal;
+        padding: 2rem;
+      }
+
+      .Hell {
+        display: flex;
+        justify-content: center;
+        position: center;
+        align-items: center;
+        width: 450px;
+      }
+      .me_image {
+        width: 17%;
+        position: relative;
+        display: flex;
+        justify-self: center;
+      }
+
+      nav a {
+        font-size: 1.1rem;
+        text-decoration: none;
+        font-weight: bold;
+        font-style: normal;
+        color: #e6e3db;
+        padding: 1.2rem;
+      }
+
+      nav a:hover {
+        color: #a1a39c;
+      }
+
+      .hero {
+        background: linear-gradient(to right, #0a98c7, white,#0a98c7);
+        padding-top: 30px;
+      }
+      /* .hero-container {
+        display: grid;
+        height: 100vh;
+        padding: 3rem calc((100vw - 1300px) / 2);
+        padding-bottom: 900px;
+      } */
+      h1 {
+        font-weight: bold;
+        font-size: large;
+        font-family: "Times New Roman", Times, serif;
+        padding-top: 20px;
+      }
+      span {
+        font-size: 70px;
+        font-weight: bold;
+        color: #000;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .Orion1 {
+        padding-top: 70px;
+        padding-bottom: 15px;
+      }
+      .Orion {
+        padding: 15px;
+      }
+      .key {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        position: center;
+        width: 180px;
+        height: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        border-radius: 30px;
+        color: #414040;
+        background: linear-gradient(to left, #414040, white, #414040);
+        text-align: center;
+        padding: auto;
+        border: solid rgb(22 30 200);
+      }
+      .on {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        position: center;
+        width: 180px;
+        height: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        border-radius: 30px;
+        color: #fffefc;
+        background-color:#85868b ;
+        text-align: center;
+        padding: auto;
+        border: solid rgb(22 30 200);
+      }
+      .School {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        position: center;
+        width: 180px;
+        height: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        border-radius: 30px;
+        color: #fffefc;
+        background-color: #85868b;
+        text-align: center;
+        padding: auto;
+        border: solid rgb(22 30 200);
+      }
+      .Area {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        position: center;
+        width: 180px;
+        height: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        border-radius: 30px;
+        color: #fffefc;
+        background-color: #85868b;
+        text-align: center;
+        padding: auto;
+        border: solid rgb(22 30 200);
+      }
+      .Category {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        position: center;
+        width: 180px;
+        height: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        border-radius: 30px;
+        color: #fffefc;
+        background-color: #85868b;
+        text-align: center;
+        padding: auto;
+        border: solid rgb(22 30 200);
+      }
+      .Option {
+        display: flex;
+        margin: auto;
+        justify-content: space-evenly;
+        position: absolute;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+      }
+      .Button {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-evenly;
+        position: center;
+        width: 180px;
+        height: 60px;
+        font-size: 30px;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        border-radius: 30px;
+        color: #fffefc;
+        background-color: #85868b;
+        text-align: center;
+        border: solid rgb(22 30 200);
+        padding: 7px;
+      }
+      .Button:hover {
+        background: linear-gradient(to left, #494a4d8c, white, #494a4d8c);
+        color: black;
+      }
+
+      h1 {
+        font-family: Arial , serif;
+        font-size: 48px;
+        font-style: italic;
+        font-weight: bold;
+        color: #6a6363;
+        text-decoration: underline;
+        text-decoration-color: rgb(35, 4, 234);
+        text-align: center;
+      }
+
+      @media screen and (max-width: 768px) {
+        .hero-container {
+          grid-template-columns: 1fr;
+        }
+      }
+      footer {
+        background-color: #136cac;
+        color:#e6e3db;
+        text-align: center;
+        padding: 10px 0;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        Education Department <br />
+        <h6>Gujarat</h6>
+      </div>
+      <a href="/" class="Hell">
+        <img
+          src="{{url_for('static', filename='img/Ashok_Emblem_svg.svg')}}"
+          alt="National"
+          Emblem
+          class="me_image"
+        />
+      </a>
+
+      <div class="nav-items">
+        <a href="/"> Home </a>
+        <a href="aboutus">About Us</a>
+        <!-- <a href="contact">Contact</a> -->
+        <!-- <a href="login">Login/Signup</a> -->
+      </div>
+    </nav>
+    <hr />
+    <section class="hero">
+      
+        <h1>Key Performance Indicators  </h1>      
+        <form action="/analyse" method="post">
+          <div class="Orion1">
+            <select
+              name="key"
+              title="key"
+              class="key"
+              id="firstSelect"
+              required
+            >
+              <option class="Option" disabled selected>Hierarchy</option>
+              <option class="Option" value="STATE">State</option>
+              <option class="Option" value="DISTRICT">District</option>
+              <option class="Option" value="AREA">Area</option>
+              <option class="Option" value="SCHOOL NAME">School Name</option>
+            </select>
+          </div>
+          <div class="Orion">
+            <select name="on" class="on" id="secondSelect" title="on" required>
+              <option class="Option" disabled selected>Select Key</option>
+            </select>
+            <script>
+              var states = ["Gujarat"];
+              var districts = [
+                "AHEMEDABAD",
+                "GANDHI NAGAR",
+                "PORBANDAR",
+                "VADODARA",
+              ];
+              var areacodes = [
+                500001, 500002, 500003, 500004, 500005, 500006, 500007, 500008,
+              ];
+              var schools = [
+                "AESTHETIC EDUCATIONAL SOCIETY",
+                "AHEMEDABAD HIGH SCHOOL",
+                "ARYA KANYA HIGH",
+                "BILLABONG MEMORIAL",
+                "BIRLA CHOUHAN SCHOOL",
+                "CASTLE COSMOS HIGH",
+                "CYGNUS HIGH SCHOOL",
+                "DAV HIGH SCHOOL",
+                "DELHI SCHOOL HIGH",
+                "GANDHI NAGAR MEMORIAL",
+                "GURUKUL SANDIPANI HIGH",
+                "MARY'S LAND HIGH",
+                "NALANDA MEMORIAL",
+                "NAVARACHAN HIGH",
+                "PODAR HIGH SCHOOL",
+                "SAINT JOSE'S HIGH",
+                "SCHOOL NEW TULIP",
+                "SHIKSHA NIKETHAN HIGH",
+                "SHRI GM SCHOOL",
+                "ZILLA PARISHAD  HIGH",
+              ];
+              $("#firstSelect").on("change", function () {
+                var selectedOption = $(this).val();
+                $("#secondSelect").empty();
+
+                switch (selectedOption) {
+                  case "STATE":
+                    $.each(states, function (index, value) {
+                      $("#secondSelect").append(
+                        $("<option>", { value: value, text: value })
+                      );
+                    });
+                    break;
+                  case "DISTRICT":
+                    $.each(districts, function (index, value) {
+                      $("#secondSelect").append(
+                        $("<option>", { value: value, text: value })
+                      );
+                    });
+                    break;
+                  case "AREA":
+                    $.each(areacodes, function (index, value) {
+                      $("#secondSelect").append(
+                        $("<option>", { value: value, text: value })
+                      );
+                    });
+                    break;
+                  case "SCHOOL NAME":
+                    $.each(schools, function (index, value) {
+                      $("#secondSelect").append(
+                        $("<option>", { value: value, text: value })
+                      );
+                    });
+                }
+              });
+            </script>
+          </div>
+
+          <div class="Orion">
+            <select
+              name="category"
+              class="Category"
+              id="thirdSelect"
+              title="category"
+              required
+            >
+              <option class="Option" disabled selected>Category</option>
+
+              <option class="Option" value="all">All</option>
+              {% for category in categories %}
+              <option class="Option" value="{{ category }}">
+                {{ category }}
+              </option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="Orion">
+            <button class="Button" type="submit">Analyse</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <hr />
+    <footer>
+      <p>&copy; 2024 Education Department,Gujarat.</p>
+    </footer>
+  </body>
+</html>

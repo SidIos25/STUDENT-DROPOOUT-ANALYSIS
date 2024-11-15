@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>Welcome to Department Of Education ,Gujarat</title>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css')}}"
+    />
+    <link
+      rel="shortcut icon"
+      type="x-icon"
+      href="{{ url_for('static', filename='img/GUJARAT_MAP.jpg')}}"
+    />
+    <style>
+      hr {
+        height: 8px;
+        background: linear-gradient(
+          to right,
+          rgb(119, 103, 71),
+          white,
+          rgb(182, 127, 15),
+          rgb(119, 103, 71),
+          white,
+          rgb(182, 127, 15),
+          rgb(152, 150, 146),
+          white,
+          rgb(182, 127, 15),
+        );
+        border-radius: 20px;
+        border: 3px solid black;
+        width: 100%;
+        margin-left: auto;
+      }
+    </style>
+    <script>
+      window.addEventListener("load", () => {
+        const preloader = document.querySelector("#preloader");
+        preloader.classList.add("preloader--hidden");
+        document
+          .querySelector("#preloader")
+          .addEventListener("transitioned", () => {
+            document.body.removeChild(document.querySelector("#preloader"));
+          });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="preloader preloader--hidden"></div>
+    <nav>
+      <div class="logo">
+        Education Department, <br />
+        <h6>Gujarat</h6>
+      </div>
+      <a href="/" class="Hell">
+        <img
+          src="{{url_for('static', filename='img/Ashok_Emblem_svg.svg')}}"
+          alt="National"
+          Emblem
+          class="me_image"
+        />
+      </a>
+
+      <div class="nav-items">
+        <a href="aboutus">About Us</a>
+        <!-- <a href="contact">Contact</a> -->
+        <!-- <a href="login">Login/Signup</a> -->
+      </div>
+    </nav>
+    <hr />
+    <section class="hero">
+      <div class="hero-container">
+        <div class="column-left">
+          <h1>
+            Welcome to Portal of Department of Education,<br />
+            GUJARAT
+          </h1>
+          <p>We Ace Analysis</p>
+          <form action="analysis" , method="get">
+            <button type="submit">Analysis</button>
+          </form>
+
+          <br />
+        </div>
+        <div class="column-right">
+          <img
+            src="{{ url_for('static', filename='img/Thispic.png')}}"
+            alt="illustration"
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </section>
+    <hr />
+    <footer>
+      <p>&copy; Education Department,Gujarat.</p>
+    </footer>
+  </body>
+</html>
